@@ -1,0 +1,30 @@
+.loading {
+  width: inherit;
+  height: inherit;
+  svg {
+    width: inherit;
+    height: inherit;
+  }
+  span {
+    width: inherit;
+    height: inherit;
+  }
+}
+
+.button-loading {
+  .loading {
+    height: 15px;
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+  }
+}
+
+.outside-button-loading {
+  .loading {
+    height: 21px;
+    margin-left: 5px;
+    position: relative;
+    top: 6px;
+  }
+}
