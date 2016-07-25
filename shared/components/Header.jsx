@@ -16,7 +16,7 @@ class Header extends Component {
   }
   renderNavbarHeader() {
     return (<div className="navbar-header">
-      <Link className="navbar-brand" to="/">emailgate</Link>
+      <Link className="navbar-brand" to="/">starter</Link>
     </div>);
   }
   renderNav() {
