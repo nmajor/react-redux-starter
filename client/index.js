@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import store from './store';
 
+require('./events');
+
 // Pull in the styles for development
 if (process.env.NODE_ENV !== 'production') {
   require('./assets/scss/style.scss'); // eslint-disable-line

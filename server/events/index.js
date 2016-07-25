@@ -2,10 +2,10 @@ export default (io) => {
   io.on('connection', (socket) => {
     console.log('a user connected');
 
-    socket.on('CREATE_ACCOUNT', () => {
-      console.log('session from socket');
-      console.log(socket.request.session);
-    });
+    // socket.on('EXAMPLE_EVENT', () => {
+    //   console.log('EXAMPLE_EVENT');
+    //   socket.emit('EXAMPLE_EVENT_EMITTED', { data });
+    // });
 
     socket.on('disconnect', () => {
       console.log('a user disconnected');
