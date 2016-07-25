@@ -66,10 +66,8 @@ class RegisterForm extends Component { // eslint-disable-line react/prefer-state
         </div>
       </div>
       <div className="form-group">
+        {error && <div className="text-danger">{error}</div>}
         <button className="btn btn-success btn-block blah" type="submit">Submit {this.renderSubmitting()}</button>
-        <span className="left-bumper">
-          {error && <div className="text-danger">{error}</div>}
-        </span>
       </div>
     </form>);
   }

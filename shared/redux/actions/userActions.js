@@ -84,11 +84,7 @@ export function registerUser(userData, cb) {
     return fetch(`${baseURL}/api/register`, {
       credentials: 'include',
       method: 'post',
-      body: JSON.stringify({
-        name: userData.name,
-        email: userData.email,
-        password: userData.password,
-      }),
+      body: JSON.stringify(userData),
       headers: new Headers({
         'Content-Type': 'application/json',
       }),
@@ -146,6 +142,11 @@ export function loginUser(userData, cb) {
     })
     .catch((err) => {
       console.log(err);
+      cb({
+        errors: {
+          base: err.message,
+        },
+      });
     });
   };
 }

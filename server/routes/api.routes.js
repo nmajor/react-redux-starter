@@ -5,8 +5,6 @@ const router = express.Router(); // eslint-disable-line new-cap
 import User from '../models/user';
 
 router.get('/user', (req, res) => {
-  console.log('session from routes');
-  console.log(req.session);
   if (req.user) {
     res.json(req.user);
   } else {
@@ -16,6 +14,13 @@ router.get('/user', (req, res) => {
 });
 
 router.post('/register', (req, res) => {
+  if (req.body.password !== req.body.passwordConfirm) {
+    return res.json({ errors: {
+      password: { message: 'Does not match' },
+      passwordConfirm: { message: 'Does not match' },
+    } });
+  }
+
   User.register(new User({ email: req.body.email }), req.body.password, (err, user) => {
     if (err) {
       return res.json({ error: {
