@@ -58,4 +58,8 @@ LoginWrapper.propTypes = {
   user: PropTypes.object,
 };
 
+LoginWrapper.contextTypes = {
+  router: PropTypes.object.isRequired,
+};
+
 export default connect(mapStateToProps)(LoginWrapper);
