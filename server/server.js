@@ -57,7 +57,7 @@ const sessionMiddleware = session({
   resave: true,
   saveUninitialized: false,
   store: new ConnectMongo({
-    url: process.env.MONGO_URL,
+    url: serverConfig.mongoURL,
     mongoose_connection: mongoose.connections[0],
   }),
 });
